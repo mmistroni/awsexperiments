@@ -1,0 +1,119 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "lambda-python3.10:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "${workspaceFolder}/lambda-python3.10/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {
+                            "body" :
+
+                                [
+                                    {
+                                    "TICKER": "000001.SS",
+                                    "NAME": "Shanghai Composite",
+                                    "QTY": 1,
+                                    "PRICE": 2059.15
+                                    },
+                                    {
+                                    "TICKER": "2836.HK",
+                                    "NAME": "SENSEX ETF",
+                                    "QTY": 1,
+                                    "PRICE": 14.4
+                                    },
+                                ]
+
+
+
+                           },
+                "environmentVariables": {},
+                "runtime": "python3.10"
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "API lambda-python3.10:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "api",
+                "templatePath": "${workspaceFolder}/lambda-python3.10/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "api": {
+                "path": "/hello",
+                "httpMethod": "get",
+                "payload": {
+                    "json": {"xsomekey" : "1",
+                             "xsomeotherkey" : "2"
+                    }
+                }
+            },
+            "lambda": {
+                "runtime": "python3.10"
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "basic-lambda:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "template",
+                "templatePath": "${workspaceFolder}/basic-lambda/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "lambda": {
+                "payload": {
+                    "json": {
+                              "body" :  [
+                                {
+                                  "TICKER": "000001.SS",
+                                  "NAME": "Shanghai Composite",
+                                  "QTY": 1,
+                                  "PRICE": 2059.15
+                                },
+                                {
+                                  "TICKER": "2836.HK",
+                                  "NAME": "SENSEX ETF",
+                                  "QTY": 1,
+                                  "PRICE": 14.4
+                                },
+                                {
+                                  "TICKER": "AAPL",
+                                  "NAME": "Apple Inc",
+                                  "QTY": 64,
+                                  "PRICE": 66.33
+                                }
+                            ]
+                    }
+                },
+                "environmentVariables": {},
+                "runtime": "python3.10"
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "API basic-lambda:HelloWorldFunction",
+            "invokeTarget": {
+                "target": "api",
+                "templatePath": "${workspaceFolder}/basic-lambda/template.yaml",
+                "logicalId": "HelloWorldFunction"
+            },
+            "api": {
+                "path": "/hello",
+                "httpMethod": "get",
+                "payload": {
+                    "json": {}
+                }
+            },
+            "lambda": {
+                "runtime": "python3.10"
+            }
+        }
+    ]
+}
