@@ -22,6 +22,8 @@ def lambda_handler(event, context):
 
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
+    #https://www.youtube.com/watch?v=mhdX4znMd2Q&ab_channel=JonathanDavies
+    #https://codeolives.com/2020/01/02/vs-code-with-python-aws-lambda-a-complete-tutorial-to-develop-and-deploy-python-lambda-functions-using-vs-code-part-2/
 
     valid_shares = ['AMZN', 'AAPL', 'MSFT', 'NFLX']
 

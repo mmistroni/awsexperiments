@@ -10,7 +10,7 @@ def apigw_event():
     """ Generates API GW Event"""
     
     return {
-        "body": '[{ "TICKER": "AMZN", "QTY" : "10"}, { "TICKER": "AAPL", "QTY" : "15"}, { "TICKER": "MSFT", "QTY" : "0"} ]',
+        "body": '[{ "TICKER": "AMZN", "QTY" : "20"}, { "TICKER": "AAPL", "QTY" : "15"}, { "TICKER": "MSFT", "QTY" : "0"} ]',
         "resource": "/{proxy+}",
         "requestContext": {
             "resourceId": "123456",
