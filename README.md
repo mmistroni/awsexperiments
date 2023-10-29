@@ -1,2 +1,2 @@
 # awsexperiments
-Application deployed to AWS
+This project contains sample AWS application, including AWS layers andn SAM application
