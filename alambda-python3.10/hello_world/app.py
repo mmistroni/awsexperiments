@@ -35,8 +35,9 @@ def generate_email(body):
     body_html += "<tr><th>TICKER</th><th>QTY</th><th>CLOSE</th><th>POSITION</th><th>PNL</th></tr>"
     template = "<tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>"
     for data in alldata:
-        if alldata.get('QTY', 0) > 1:
-            formatted = template.format(data['TICKER'], data['QTY'], data['CLOSE'], data['POSITION'], data['PNL'])        
+        if data.get('QTY', 0) > 1:
+            formatted = template.format(data['TICKER'], data['QTY'], data.get('CLOSE', 0.0), data.get('POSITION', 0.0), 
+                                        data.get('PNL', 0.0))        
             body_html += formatted
      
     body_html += "</table></body></html>" 
